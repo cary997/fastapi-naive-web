@@ -1,0 +1,12 @@
+{
+  "title": "FastApi Naive",
+  "logintitle": "FastApi Naive",
+  "CachingAsyncRoutes": true,
+  "menuSetting": {
+    "minMenuWidth": 64,
+    "menuWidth": 200,
+    "mobileWidth": 800,
+    "collapsed": false,
+    "accordion": false
+  }
+}

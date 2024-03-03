@@ -1,0 +1,6 @@
+{
+    "i18n-ally.localesPaths": [
+        "src/settings/i18n",
+        "src/settings/i18n/lang"
+    ]
+}
