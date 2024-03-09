@@ -1,9 +1,9 @@
 <!--
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2023-01-12 23:05:39
- * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 23:01:53
- * @FilePath: /fastapi-naive-web/src/components/Layout/index.vue
+ * @LastEditors: 
+ * @LastEditTime: 2024-03-04 03:24:01
+ * @FilePath: /src/components/Layout/index.vue
  * @Descripttion: 
 -->
 <template>
@@ -149,6 +149,7 @@ import { storeToRefs } from "pinia"
 import { useTabsStoreHook } from "@/store/modules/appTabs"
 import { isMobileBrowserPattern } from "@/utils/regularTools"
 import useSettingsStore from "@/store/modules/appSettings"
+
 const { menuSetting, isMobile, isCollapsed, isaccordion } =
     storeToRefs(usewebSiteStore())
 const { isTags } = storeToRefs(useTabsStoreHook())
@@ -166,6 +167,7 @@ const handleChangeAccordion = () => {
     accordion.value = !accordion.value
     usewebSiteStore().setIsAccordion(accordion.value)
 }
+
 //判断是否触发移动端模式
 const checkMobileMode = () => {
     if (

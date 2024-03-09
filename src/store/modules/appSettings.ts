@@ -1,15 +1,42 @@
 /*
  * @Author: Cary
  * @Date: 2024-02-27 02:27:52
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-04 00:16:58
- * @FilePath: /fastapi-naive-web/src/store/modules/appSettings.ts
+ * @FilePath: /src/store/modules/appSettings.ts
  * @Descripttion:
  */
 import { getSystemSettingsApi } from "@/api/system/settingsApi"
 import { settingsInfo, settingsResponse } from "@/api/system/type"
 import { defineStore } from "pinia"
-const generalDefaultData = { watermark: false, user_default_password: null }
+const ldapDefaultData = {
+    config: {
+        enable: false,
+        hosts: [],
+        user: null,
+        password: null,
+        base_ou: null,
+        attributes: {
+            username: "sAMAccountName",
+            nickname: "cn",
+            email: "mail",
+            phone: "telephoneNumber",
+        },
+    },
+    sync: {
+        enable: false,
+        interval: 0,
+        default_status: false,
+        sync_rule: 1,
+    },
+}
+const generalDefaultData = {
+    watermark: false,
+    user_default_password: null,
+    user_default_roles: [],
+    watermarkContent: 1,
+    watermarkSize: 2,
+}
 const securityDefaultData = {
     totp: false,
     ip_check: false,
@@ -36,6 +63,7 @@ const channelsefaultData = {
 const useSettingsStore = defineStore({
     id: "app-settings",
     state: (): settingsInfo => ({
+        ldap: ldapDefaultData,
         general: generalDefaultData,
         security: securityDefaultData,
         channels: channelsefaultData,
@@ -56,6 +84,7 @@ const useSettingsStore = defineStore({
         },
         updateSettings(data: settingsInfo) {
             this.general = data.general
+            this.ldap = data.ldap
             this.security = data.security
             this.channels = data.channels
         },

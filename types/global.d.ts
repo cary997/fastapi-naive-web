@@ -1,17 +1,9 @@
 /*
- * @Author: guoyl
- * @Date: 2023-06-01 19:28:11
- * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 20:33:55
- * @FilePath: /fastapi-naive-web/types/global.d.ts
- * @Descripttion:
- */
-/*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2023-05-09 19:48:18
- * @LastEditors: guoyl
- * @LastEditTime: 2023-06-06 23:15:36
- * @FilePath: \fastapi-naive-web\types\global.d.ts
+ * @LastEditors: Cary
+ * @LastEditTime: 2024-03-06 12:09:56
+ * @FilePath: /types/global.d.ts
  * @Descripttion:
  */
 
@@ -58,6 +50,10 @@ declare global {
         accordion?: boolean
     }
     interface PlatformConfigs {
+        /**ASE加解密key 和后端保持一致*/
+        secret_key?: string
+        /**ASE加解密IV 和后端保持一致*/
+        secret_iv?: string
         /**axios基础url */
         axiosConfig?: AxiosRequestConfig
         /**网站标题 */

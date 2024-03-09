@@ -1,19 +1,14 @@
 <!--
  * @Author: Cary
  * @Date: 2024-03-02 04:44:01
- * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 23:30:32
- * @FilePath: /fastapi-naive-web/src/pages/system/settings/channelsSettings/mailSettings.vue
+ * @LastEditors: 
+ * @LastEditTime: 2024-03-05 04:17:24
+ * @FilePath: /src/pages/system/settings/channelsSettings/mailSettings.vue
  * @Descripttion: 
 -->
 <template>
     <div class="flex flex-col items-center space-y-4">
-        <n-form
-            v-model:model="data"
-            label-placement="left"
-            label-width="auto"
-            label-align="right"
-        >
+        <n-form v-model:model="data" label-placement="left" label-width="auto">
             <n-form-item label="服务器" path="email.MAIL_SERVER">
                 <n-input
                     v-model:value="data.email.MAIL_SERVER"
@@ -50,11 +45,11 @@
                     placeholder="username"
                 />
             </n-form-item>
-            <n-form-item label="邮件标题" path="email.MAIL_FROM_NAME">
+            <n-form-item label="显示名称" path="email.MAIL_FROM_NAME">
                 <n-input
                     v-model:value="data.email.MAIL_FROM_NAME"
                     clearable
-                    placeholder="username"
+                    placeholder="FastApi Naive"
                 />
             </n-form-item>
             <n-form-item label="TLS连接" path="email.MAIL_STARTTLS">
@@ -109,10 +104,10 @@ import {
     NInputNumber,
     NButton,
     NIcon,
-    NSwitch
+    NSwitch,
 } from "naive-ui"
 import { CheckmarkCircle20Filled, ErrorCircle20Filled } from "@vicons/fluent"
-import { setSystemSettingsApi } from "@/api/test/testApi"
+import { testEmailSettingsApi } from "@/api/test/testApi"
 
 //双向绑定
 const data = defineModel({
@@ -128,7 +123,7 @@ const handleTestClick = async () => {
     testLoading.value = true
     const testConfig = toRaw(unref(data.value))
     const testReceive = toRaw(unref(testMail.value))
-    await setSystemSettingsApi(testConfig.email, testReceive)
+    await testEmailSettingsApi(testConfig.email, testReceive)
         .then(res => {
             if (res.code) {
                 testStatus.value = 1

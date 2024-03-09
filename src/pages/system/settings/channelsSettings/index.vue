@@ -1,9 +1,9 @@
 <!--
  * @Author: Cary
  * @Date: 2024-03-02 04:44:01
- * @LastEditors: Cary
+ * @LastEditors: 
  * @LastEditTime: 2024-03-02 19:42:49
- * @FilePath: /fastapi-naive-web/src/pages/system/settings/channelsSettings/index.vue
+ * @FilePath: /src/pages/system/settings/channelsSettings/index.vue
  * @Descripttion: 
 -->
 <template>

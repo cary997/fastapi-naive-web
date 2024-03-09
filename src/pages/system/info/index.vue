@@ -2,30 +2,18 @@
  * @Author: Cary
  * @Date: 2024-03-03 11:22:02
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 22:20:21
- * @FilePath: /fastapi-naive-web/src/pages/system/info/index.vue
+ * @LastEditTime: 2024-03-09 21:14:05
+ * @FilePath: /src/pages/system/info/index.vue
  * @Descripttion: 
 -->
 <template>
-    <div class="flex-1 default-bg p-2">
-        <n-card
-            embedded
-            size="small"
-            :segmented="{
-                content: true,
-            }"
-            :bordered="false"
-        >
-            fastapi-naive-admin
-            是一个基于python3+fastapi框架的权限控制系统，集合了常见的权限控制示例。前端使用了最新的
-            Vue3、Vite、Element-Plus、TypeScript、Pinia、Tailwindcss
-            等主流技术开发。后端使用python3、fastapi、tortoise-orm等主流技术开发。您可基于此项目基础上专注开发您的业务模块，希望此项目对您有帮助！
-
+    <div class="flex-1 default-bg">
+        <n-card embedded size="small" :bordered="false">
             <n-descriptions
                 title="平台信息"
                 label-placement="left"
                 label-align="left"
-                :column="3"
+                :column="column"
                 bordered
                 size="small"
                 class="pt-5"
@@ -44,13 +32,13 @@
                 </n-descriptions-item>
                 <n-descriptions-item label="代码仓库">
                     <a
-                        href="https://github.com/guoyl1997/fastapi-naive-admin"
+                        href="https://github.com/Cary1997/fastapi-naive-admin"
                         target="_blank"
                         class="link link-primary mr-2"
                         >GitHub</a
                     >
                     <a
-                        href="https://github.com/guoyl1997/fastapi-naive-admin"
+                        href="https://github.com/Cary1997/fastapi-naive-admin"
                         target="_blank"
                         class="link link-primary ml-2"
                         >Gitee</a
@@ -64,7 +52,7 @@
                 title="生产环境依赖"
                 label-placement="left"
                 label-align="left"
-                :column="5"
+                :column="column"
                 size="small"
                 bordered
                 class="pt-5"
@@ -77,7 +65,7 @@
                 title="开发环境依赖"
                 label-placement="left"
                 label-align="left"
-                :column="5"
+                :column="column"
                 size="small"
                 bordered
                 class="pt-5"
@@ -97,7 +85,14 @@
 defineOptions({
     name: "systemInfo",
 })
+import usewebSiteStore from "@/store/modules/appWebSite"
+import { computed } from "vue"
 import { NDescriptions, NDescriptionsItem, NCard } from "naive-ui"
+import { storeToRefs } from "pinia"
+const { isMobile } = storeToRefs(usewebSiteStore())
+const column = computed(() => {
+    return isMobile.value ? 1 : 4
+})
 const { pkg } = __APP_INFO__
 const { dependencies, devDependencies } = pkg
 export interface schemaItem {

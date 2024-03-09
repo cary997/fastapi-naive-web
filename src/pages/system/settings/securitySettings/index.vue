@@ -2,8 +2,8 @@
  * @Author: Cary
  * @Date: 2024-02-28 23:55:17
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-04 00:00:23
- * @FilePath: /fastapi-naive-web/src/pages/system/settings/securitySettings/index.vue
+ * @LastEditTime: 2024-03-09 22:54:30
+ * @FilePath: /src/pages/system/settings/securitySettings/index.vue
  * @Descripttion: 
 -->
 <template>
@@ -40,7 +40,7 @@
             <NText depth="3" class="text-sm">
                 开启IP校验后将通过判断用户的请求IP地址来限制用户访问，校验模式分为白名单和黑名单。<br />
                 注: 白名单模式将只允许白名单列表中的IP地址访问<br />
-                注:黑名单模式将只允许不在黑名单列表中的IP地址访问
+                注: 黑名单模式将只允许不在黑名单列表中的IP地址访问
             </NText>
         </div>
         <div class="flex flex-col space-y-2">

@@ -1,24 +1,22 @@
 <!--
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-26 23:51:56
- * @LastEditors: Cary
+ * @LastEditors: 
  * @LastEditTime: 2024-02-24 00:26:57
- * @FilePath: /fastapi-naive-web/src/pages/auth/users/index.vue
+ * @FilePath: /src/pages/auth/users/index.vue
  * @Descripttion: 
 -->
 
 <template>
-  <div class="flex-1 flex flex-col">
-    <usersTable />
-  </div>
+    <div class="flex-1 flex flex-col">
+        <usersTable />
+    </div>
 </template>
 
 <script lang="ts" setup>
-import usersTable from "./usersTable.vue";
+import usersTable from "./usersTable.vue"
 
 defineOptions({
-  name: "authUsers",
-});
-
-
+    name: "authUsers",
+})
 </script>

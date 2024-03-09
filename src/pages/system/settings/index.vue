@@ -36,6 +36,7 @@
                 <div :class="isMobile ? null : 'p-10'">
                     <n-card :title="title" embedded :bordered="false">
                         <template #header-extra>
+                            <Auth value="system_settings_set">
                             <NButton
                                 type="info"
                                 :disabled="saveDisable"
@@ -43,11 +44,16 @@
                                 @click="handelSaveClick"
                                 >{{ $t("action.save") }}</NButton
                             >
+                        </Auth>
                         </template>
                         <n-divider />
                         <generalSettings
                             v-show="clickStatus == 'general'"
                             v-model="general"
+                        />
+                        <ldapSettings
+                            v-show="clickStatus == 'ldap'"
+                            v-model="ldap"
                         />
                         <securitySettings
                             v-show="clickStatus == 'security'"
@@ -66,7 +72,7 @@
 
 <script lang="ts" setup>
 import { ref, unref, toRaw, onMounted } from "vue"
-import { NDrawer, NButton, NIcon,NDivider,NCard } from "naive-ui"
+import { NDrawer, NButton, NIcon, NDivider, NCard } from "naive-ui"
 import { MenuSharp } from "@vicons/ionicons5"
 import {
     setSystemSettingsHandle,
@@ -76,10 +82,12 @@ import {
     blackListData,
 } from "./extend"
 import usewebSiteStore from "@/store/modules/appWebSite"
+import { initRolesList } from "@/hooks/auth/useRolesPageHook"
 import { storeToRefs } from "pinia"
 import generalSettings from "./generalSettings/index.vue"
 import securitySettings from "./securitySettings/index.vue"
 import channelsSettings from "./channelsSettings/index.vue"
+import ldapSettings from "./ldapSettings/index.vue"
 import settingsTabs from "./settingsTabs.vue"
 import useSettingsStore from "@/store/modules/appSettings"
 defineOptions({
@@ -87,7 +95,7 @@ defineOptions({
 })
 
 const { isMobile } = storeToRefs(usewebSiteStore())
-const { general, security, channels } = storeToRefs(useSettingsStore())
+const { general, ldap, security, channels } = storeToRefs(useSettingsStore())
 const showSideDrawder = ref(false)
 const title = ref("常规设置")
 const clickStatus = ref("general")
@@ -96,6 +104,14 @@ const handelSaveClick = async () => {
     saveDisable.value = true
     saveLoading.value = true
     let reqData = null
+    if (clickStatus.value == "general") {
+        const data = toRaw(unref(general.value))
+        reqData = { general: data }
+    }
+    if (clickStatus.value == "ldap") {
+        const data = toRaw(unref(ldap.value))
+        reqData = { ldap: data }
+    }
     if (clickStatus.value == "security") {
         const data = toRaw(unref(security.value))
         reqData = { security: data }
@@ -114,12 +130,16 @@ const handelSaveClick = async () => {
         })
 }
 
-onMounted(() => {
+onMounted(async () => {
+    //初始化角色列表
+    await initRolesList()
+    
     whiteListData.value = security.value.ip_white_list
         ? security.value.ip_white_list.join(",")
         : null
     blackListData.value = security.value.ip_black_list
         ? security.value.ip_black_list.join(",")
         : null
+    //初始化
 })
 </script>

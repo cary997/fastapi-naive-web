@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-27 10:46:37
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 22:50:43
- * @FilePath: /fastapi-naive-web/src/store/modules/appLogin.ts
+ * @LastEditTime: 2024-03-06 09:42:13
+ * @FilePath: /src/store/modules/appLogin.ts
  * @Descripttion:
  */
 import { defineStore } from "pinia"

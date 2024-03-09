@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-26 21:26:40
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-03 23:54:39
- * @FilePath: /fastapi-naive-web/src/main.ts
+ * @FilePath: /src/main.ts
  * @Descripttion:
  */
 import { createApp } from "vue"

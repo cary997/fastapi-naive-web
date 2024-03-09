@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-28 21:05:39
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-04 00:29:50
- * @FilePath: /fastapi-naive-web/src/settings/i18n/index.ts
+ * @FilePath: /src/settings/i18n/index.ts
  * @Descripttion:
  */
 

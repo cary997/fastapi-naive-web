@@ -1,111 +1,96 @@
 <!--
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-26 23:51:56
  * @LastEditors: Cary
- * @LastEditTime: 2024-02-26 19:57:31
- * @FilePath: /fastapi-naive-web/src/pages/home/index.vue
+ * @LastEditTime: 2024-03-10 01:23:51
+ * @FilePath: /src/pages/home/index.vue
  * @Descripttion: 
 -->
 
 <template>
-  <div class="flex flex-row space-x-8">
-    <div class="flex flex-none flex-col space-y-4">
-      <h1>Home</h1>
-      <RouterLink to="/result/403">
-        <n-button>test</n-button>
-      </RouterLink>
-      <NInput text></NInput>
-      <n-space>
-        <n-tag closable @close="handleClose"> 爱在西元前 </n-tag>
-        <n-tag type="success" closable @close="handleClose"> 不该 </n-tag>
-        <n-tag type="warning" closable @close="handleClose"> 超人不会飞 </n-tag>
-        <n-tag type="error" closable @close="handleClose"> 手写的从前 </n-tag>
-        <n-tag type="info" closable @click="handleClick" @close="handleClose">
-          哪里都是你
-        </n-tag>
-      </n-space>
-    </div>
-    <div class="flex flex-1 flex-col space-y-4">
-      <div class="flex flex-none">
-        <button class="btn btn-primary">Button</button>
-        <button class="btn btn-info">Button</button>
-        <button class="btn btn-success">Button</button>
-        <button class="btn btn-warning">Button</button>
-        <button class="btn btn-error">Button</button>
-        <button class="btn btn-secondary">Button</button>
-      </div>
-      <div class="dropdown mb-72">
-        <div tabindex="0" role="button" class="btn m-1">
-          Theme
-          <svg
-            width="12px"
-            height="12px"
-            class="h-2 w-2 fill-current opacity-60 inline-block"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 2048 2048"
-          >
-            <path
-              d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"
-            ></path>
-          </svg>
-        </div>
-        <ul
-          tabindex="0"
-          class="dropdown-content z-[1] p-2 shadow-2xl bg-base-300 rounded-box w-52"
+    <div class="hero min-h-full default-bg">
+        <div
+            class="hero-content flex flex-col space-y-8 h-full m:flex-row m:space-x-8"
         >
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="light"
-              value="light"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="dark"
-              value="dark"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="synthwave"
-              value="synthwave"
-            />
-          </li>
-          <li>
-            <input
-              type="radio"
-              name="theme-dropdown"
-              class="theme-controller btn btn-sm btn-block btn-ghost justify-start"
-              aria-label="retro"
-              value="retro"
-            />
-          </li>
-        </ul>
-      </div>
+            <div
+                class="card flex flex-col justify-center w-full h-full max-w-sm"
+            >
+                <div
+                    class="hero w-full h-3/4"
+                    style="background-image: url(/src/assets/homeImage/home.jpg)"
+                >
+                    <div class="hero-overlay bg-opacity-70"></div>
+                    <div class="hero-content text-center text-neutral-content">
+                        <div class="max-w-md">
+                            <h1 class="mb-5 text-5xl font-bold">你 好</h1>
+                            <p class="mb-5 text-left">
+                                项目背景：在使用Fastapi框架写项目时,发现没有现成的权限管理框架，
+                                写后台管理类项目时权限管理模块几乎最耗时的一部分，为了自己方便也为了大家方便，
+                                便试着写了一个通用的权限管理后台。
+                            </p>
+                            <button class="btn btn-primary">开始吧！</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex flex-col">
+                <div class="text-center m:text-left">
+                    <h1 class="text-4xl font-bold">项目介绍</h1>
+                    <p class="py-4">
+                        fastapi-naive-admin
+                        是一个基于python3+fastapi框架的权限控制系统，集合了常见的权限控制示例。前端使用了最新的
+                        Vue3、Vite、Naive UI、TypeScript、Pinia、Tailwindcss
+                        等主流技术开发。后端使用python3、fastapi、tortoise-orm等主流技术开发，拥有完整的API文档。
+                        您可基于此项目基础上专注开发您的业务模块，希望此项目对您有帮助!
+                    </p>
+                </div>
+                <div class="text-center m:text-left">
+                    <h1 class="text-4xl font-bold">功能介绍</h1>
+                    <p class="py-4">
+                        主要功能
+                        动态路由(支持内嵌、外链)、按钮权限控制、JWT无感刷新、LDAP登录、MFA登录、黑白名单校验。额外功能国际化、多主题、水印、邮件通知等等。
+                    </p>
+                    <div
+                        class="flex flex-col space-y-4 justify-center items-center m:flex-row m:space-x-4"
+                    >
+                        <n-image
+                            width="200"
+                            height="140"
+                            src="/src/assets/homeImage/mfa.png"
+                        />
+                        <n-image
+                            width="200"
+                            height="140"
+                            src="/src/assets/homeImage/email.png"
+                        />
+                        <n-image
+                            width="200"
+                            height="140"
+                            src="/src/assets/homeImage/mobile.png"
+                        />
+                        <n-image
+                            width="200"
+                            height="140"
+                            src="/src/assets/homeImage/error.png"
+                        />
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </div>
 </template>
 
 <script lang="ts" setup>
-import { NInput, NSpace, NTag, NButton } from "naive-ui";
-
+import { NImage } from "naive-ui"
 defineOptions({
-  name: "Home",
-});
-
-const handleClose = () => {
-  window.$message.info("tag close");
-};
-const handleClick = () => {
-  window.$message.info("tag click");
-};
+    name: "Home",
+})
 </script>
+
+<style scoped>
+.carousel-img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+}
+</style>

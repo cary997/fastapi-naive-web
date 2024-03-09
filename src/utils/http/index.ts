@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2024-02-26 21:57:34
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-03 09:49:58
- * @FilePath: /fastapi-naive-web/src/utils/http/index.ts
+ * @LastEditTime: 2024-03-09 05:21:11
+ * @FilePath: /src/utils/http/index.ts
  * @Descripttion:
  */
 import Axios, {
@@ -30,7 +30,7 @@ const defaultConfig: AxiosRequestConfig = {
     //后端请求路径
     baseURL: import.meta.env.VITE_BASE_API,
     // 请求超时时间
-    timeout: 5000,
+    timeout: 10000,
     headers: {
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",

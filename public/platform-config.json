@@ -1,6 +1,6 @@
 {
-  "title": "FastApi Naive",
-  "logintitle": "FastApi Naive",
+  "title": "Fastapi Naive",
+  "logintitle": "Fastapi Naive",
   "CachingAsyncRoutes": true,
   "menuSetting": {
     "minMenuWidth": 64,
@@ -8,5 +8,7 @@
     "mobileWidth": 800,
     "collapsed": false,
     "accordion": false
-  }
+  },
+  "secret_key": "TYK6tziA9azcb31d",
+  "secret_iv": "FD2fnb7ytFatHeem"
 }

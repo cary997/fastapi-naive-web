@@ -1,40 +1,41 @@
 <!--
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-26 21:26:40
- * @LastEditors: Cary
+ * @LastEditors: 
  * @LastEditTime: 2024-02-29 06:08:18
- * @FilePath: /fastapi-naive-web/src/App.vue
+ * @FilePath: /src/App.vue
  * @Descripttion: 
 -->
 <template>
-  <NConfigProvider
-    :theme="theme"
-    :breakpoints="breakpoints"
-    :theme-overrides="theme === null ? lightThemeOverrides : darkThemeOverrides"
-    :locale="locale"
-    :date-locale="dateLocale"
-    :hljs="hljs"
-  >
-    <GlobalApps>
-      <RouterView />
-    </GlobalApps>
-  </NConfigProvider>
+    <NConfigProvider
+        :theme="theme"
+        :breakpoints="breakpoints"
+        :theme-overrides="
+            theme === null ? lightThemeOverrides : darkThemeOverrides
+        "
+        :locale="locale"
+        :date-locale="dateLocale"
+        :hljs="hljs"
+    >
+        <GlobalApps>
+            <RouterView />
+        </GlobalApps>
+    </NConfigProvider>
 </template>
 
 <script lang="ts" setup>
-import { NConfigProvider } from "naive-ui";
-import { GlobalApps } from "@components/Global";
-import { storeToRefs } from "pinia";
-import useLanguageStore from "@/store/modules/appLanguage";
-import useThemesStore from "@/store/modules/appThemes";
+import { NConfigProvider } from "naive-ui"
+import { GlobalApps } from "@components/Global"
+import { storeToRefs } from "pinia"
+import useLanguageStore from "@/store/modules/appLanguage"
+import useThemesStore from "@/store/modules/appThemes"
 import {
-  breakpoints,
-  lightThemeOverrides,
-  darkThemeOverrides,
-} from "@/settings/themes/index";
-import hljs from "@/utils/hljs";
+    breakpoints,
+    lightThemeOverrides,
+    darkThemeOverrides,
+} from "@/settings/themes/index"
+import hljs from "@/utils/hljs"
 
-const { locale, dateLocale } = storeToRefs(useLanguageStore());
-const { theme } = storeToRefs(useThemesStore());
-
+const { locale, dateLocale } = storeToRefs(useLanguageStore())
+const { theme } = storeToRefs(useThemesStore())
 </script>

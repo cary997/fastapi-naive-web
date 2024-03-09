@@ -1,9 +1,9 @@
 /*
  * @Author: Cary
  * @Date: 2024-03-03 10:35:21
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-03 10:54:59
- * @FilePath: /fastapi-naive-web/buildVersion.js
+ * @FilePath: /buildVersion.js
  * @Descripttion:
  */
 import fs from "fs"

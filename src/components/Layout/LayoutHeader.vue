@@ -1,54 +1,46 @@
 <!--
  * @Author: Cary
- * @Date: 2024-02-15 22:23:54
- * @LastEditors: Cary
- * @LastEditTime: 2024-02-25 21:11:21
- * @FilePath: /fastapi-naive-web/src/components/Layout/LayoutHeader.vue
- * @Descripttion: 
--->
-<!--
- * @Author: guoyl
  * @Date: 2023-01-07 00:50:25
- * @LastEditors: guoyaolei
+ * @LastEditors: Cary
  * @LastEditTime: 2024-02-03 06:02:10
- * @FilePath: /fastapi-naive-web/src/components/Layout/LayoutHeader.vue
+ * @FilePath: /src/components/Layout/LayoutHeader.vue
  * @Descripttion: 
 -->
 <template>
-  <div class="flex flex-row">
-    <div
-      class="ml-2 mr-2 flex flex-none flex-row items-center justify-start m:ml-4 m:mr-4"
-    >
-      <slot></slot>
+    <div class="flex flex-row">
+        <div
+            class="ml-2 mr-2 flex flex-none flex-row items-center justify-start m:ml-4 m:mr-4"
+        >
+            <slot></slot>
+        </div>
+        <div class="flex flex-1 flex-row items-center justify-end">
+            <!-- 快捷方式下拉菜单 -->
+            <div class="ml-2 mr-2 m:ml-8 m:mr-8">
+                <ExtLinkMenus />
+            </div>
+            <!-- 语言选择下拉菜单 -->
+            <div class="ml-2 mr-2 m:ml-8 m:mr-8">
+                <LanguageSelectVue :show-label="false" />
+            </div>
+            <!-- 主题选择下拉菜单 -->
+            <div class="ml-2 mr-2 m:ml-8 m:mr-8 xl:ml-8 xl:mr-8">
+                <ThemeSelectVue />
+            </div>
+            <!-- 头像 -->
+            <div
+                class="border-lighrBorder ml-4 mr-0 border-l border-r border-opacity-25 bg-gray-400 bg-opacity-10 pl-2 pr-2 dark:border-gray-300 dark:border-opacity-25 dark:bg-gray-300 dark:bg-opacity-10 m:ml-8 m:mr-8"
+            >
+                <UserAvtarVue />
+            </div>
+        </div>
     </div>
-    <div class="flex flex-1 flex-row items-center justify-end">
-      <!-- 快捷方式下拉菜单 -->
-      <div class="ml-2 mr-2 m:ml-8 m:mr-8">
-        <ExtLinkMenus />
-      </div>
-      <!-- 语言选择下拉菜单 -->
-      <div class="ml-2 mr-2 m:ml-8 m:mr-8">
-        <LanguageSelectVue :show-label="false" />
-      </div>
-      <!-- 主题选择下拉菜单 -->
-      <div class="ml-2 mr-2 m:ml-8 m:mr-8 xl:ml-8 xl:mr-8">
-        <ThemeSelectVue />
-      </div>
-      <!-- 头像 -->
-      <div
-        class="border-lighrBorder ml-4 mr-0 border-l border-r border-opacity-25 bg-gray-400 bg-opacity-10 pl-2 pr-2 dark:border-gray-300 dark:border-opacity-25 dark:bg-gray-300 dark:bg-opacity-10 m:ml-8 m:mr-8"
-      >
-        <UserAvtarVue />
-      </div>
-    </div>
-  </div>
 </template>
 
 <script lang="ts" setup>
 import {
-  ThemeSelectVue,
-  LanguageSelectVue,
-  UserAvtarVue,
-  ExtLinkMenus,
-} from "./header";
+    ThemeSelectVue,
+    LanguageSelectVue,
+    UserAvtarVue,
+    ExtLinkMenus,
+} from "./header"
 </script>

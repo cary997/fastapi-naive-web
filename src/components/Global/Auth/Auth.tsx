@@ -1,9 +1,9 @@
 /*
  * @Author: Cary
  * @Date: 2024-02-22 16:19:57
- * @LastEditors: Cary
+ * @LastEditors: 
  * @LastEditTime: 2024-02-22 23:29:06
- * @FilePath: /fastapi-naive-web/src/components/Global/Auth/isAuth.tsx
+ * @FilePath: /src/components/Global/Auth/isAuth.tsx
  * @Descripttion: 
  */
 import { defineComponent, Fragment,PropType } from "vue";

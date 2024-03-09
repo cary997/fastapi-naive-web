@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2023-01-04 19:54:26
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-03 06:17:05
- * @FilePath: /fastapi-naive-web/src/utils/http/errors.ts
+ * @FilePath: /src/utils/http/errors.ts
  * @Descripttion:
  */
 

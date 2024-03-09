@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2023-01-04 20:45:36
- * @LastEditors: guoyl
- * @LastEditTime: 2023-01-04 20:56:51
- * @FilePath: /charon_web/src/utils/http/repeatRequest.ts
+ * @LastEditors: Cary
+ * @LastEditTime: 2024-03-09 05:49:39
+ * @FilePath: /src/utils/http/repeatRequest.ts
  * @Descripttion:
  */
 import Axios from "axios"

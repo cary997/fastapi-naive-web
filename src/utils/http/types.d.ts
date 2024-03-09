@@ -1,9 +1,9 @@
 /*
- * @Author: guoyl
+ * @Author: Cary
  * @Date: 2022-12-27 10:41:54
- * @LastEditors: Cary
+ * @LastEditors:
  * @LastEditTime: 2024-03-03 09:45:29
- * @FilePath: /fastapi-naive-web/src/utils/http/types.d.ts
+ * @FilePath: /src/utils/http/types.d.ts
  * @Descripttion:
  */
 import Axios, {
