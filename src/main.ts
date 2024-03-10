@@ -22,9 +22,16 @@ import { getPlatformConfig } from "./settings/config"
 const app = createApp(App)
 
 // 全局注册按钮级别权限组件
-import { Auth, GlobalTooltip } from "@components/Global"
+import {
+    Auth,
+    GlobalTooltip,
+    GlobalCodeInput,
+    GlobalShowPassword,
+} from "@components/Global"
 app.component("Auth", Auth)
 app.component("tip", GlobalTooltip)
+app.component("codeInput", GlobalCodeInput)
+app.component("showPassword", GlobalShowPassword)
 
 getPlatformConfig(app).then(async () => {
     // 挂载路由

@@ -73,6 +73,7 @@ action:
   density: Density
   pinned: Pinned
   more: More
+  viewPlaintext: View Plaintext
   getJson: Get JSON
   create_at: Create Time
   update_at: Update Time

@@ -1,9 +1,9 @@
 {
 	"name": "fastapi-naive-web",
 	"private": true,
-	"version": "v1.3.3",
+	"version": "v1.3.6",
 	"type": "module",
-	"lastBuildTime": "2024-03-03 21:28:23",
+	"lastBuildTime": "2024-03-11 05:52:59",
 	"engines": {
 		"node": "^18.19.1 || ^v20.11.1",
 		"npm": ">=10.4.0"

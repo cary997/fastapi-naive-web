@@ -1,8 +1,8 @@
 <!--
  * @Author: Cary
  * @Date: 2024-03-02 04:44:01
- * @LastEditors: 
- * @LastEditTime: 2024-03-05 04:17:24
+ * @LastEditors: Cary
+ * @LastEditTime: 2024-03-10 10:08:48
  * @FilePath: /src/pages/system/settings/channelsSettings/mailSettings.vue
  * @Descripttion: 
 -->
@@ -36,7 +36,12 @@
                     clearable
                     show-password-on="click"
                     placeholder="**********"
+                    class="mr-2"
                 />
+                <show-password
+                    v-if="data.email.MAIL_PASSWORD"
+                    :value="data.email.MAIL_PASSWORD"
+                ></show-password>
             </n-form-item>
             <n-form-item label="发件地址" path="email.MAIL_FROM">
                 <n-input

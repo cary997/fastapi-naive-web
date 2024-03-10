@@ -2,7 +2,7 @@
  * @Author: Cary
  * @Date: 2023-07-14 15:14:16
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-09 21:05:44
+ * @LastEditTime: 2024-03-10 08:21:26
  * @FilePath: /src/pages/auth/users/usersTable.vue
  * @Descripttion: 
 -->
@@ -180,6 +180,7 @@ import {
 } from "@vicons/fluent"
 import { onBeforeMount, ref } from "vue"
 import { useI18n } from "vue-i18n"
+import useSettingsStore from "@/store/modules/appSettings"
 import { initRolesList } from "@/hooks/auth/useRolesPageHook"
 import { resetTotpApi } from "@/api/auth/UsersApi"
 

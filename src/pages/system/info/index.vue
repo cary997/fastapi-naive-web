@@ -2,7 +2,7 @@
  * @Author: Cary
  * @Date: 2024-03-03 11:22:02
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-09 21:14:05
+ * @LastEditTime: 2024-03-10 05:17:17
  * @FilePath: /src/pages/system/info/index.vue
  * @Descripttion: 
 -->
@@ -38,7 +38,7 @@
                         >GitHub</a
                     >
                     <a
-                        href="https://github.com/Cary1997/fastapi-naive-admin"
+                        href="https://gitee.com/guoyaolei/fastapi-naive-admin"
                         target="_blank"
                         class="link link-primary ml-2"
                         >Gitee</a

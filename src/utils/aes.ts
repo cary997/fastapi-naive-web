@@ -2,14 +2,13 @@
  * @Author: Cary
  * @Date: 2024-03-06 17:02:06
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-06 20:33:01
+ * @LastEditTime: 2024-03-10 05:21:56
  * @FilePath: /src/utils/aes.ts
  * @Descripttion:
  */
 
 import { getConfig } from "@/settings/config"
 import CryptoJS from "crypto-js"
-import { decode } from "js-base64"
 
 // 加密
 export const aesEncrypt = word => {

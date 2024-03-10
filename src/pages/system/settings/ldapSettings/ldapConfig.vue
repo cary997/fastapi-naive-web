@@ -2,7 +2,7 @@
  * @Author: Cary
  * @Date: 2024-03-02 04:44:01
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-06 20:38:03
+ * @LastEditTime: 2024-03-10 10:06:12
  * @FilePath: /src/pages/system/settings/ldapSettings/ldapConfig.vue
  * @Descripttion: 
 -->
@@ -44,22 +44,11 @@
                                 type="password"
                                 show-password-on="click"
                                 placeholder="**********"
-                            >
-                                <template #password-visible-icon>
-                                    <n-icon
-                                        :size="16"
-                                        :component="Eye24Regular"
-                                        @click="showPasswordClick(false)"
-                                    />
-                                </template>
-                                <template #password-invisible-icon>
-                                    <n-icon
-                                        :size="16"
-                                        :component="EyeOff24Filled"
-                                        @click="showPasswordClick(true)"
-                                    />
-                                </template>
-                            </n-input>
+                                class="mr-2"
+                            />
+                            <show-password v-if="data.password"
+                                :value="data.password"
+                            ></show-password>
                         </n-form-item>
                         <n-form-item label="基础OU" path="base_ou">
                             <n-input
@@ -205,7 +194,7 @@ import { testLdapResault, testLdapSettingsApi } from "@/api/test/testApi"
 import { useI18n } from "vue-i18n"
 import usewebSiteStore from "@/store/modules/appWebSite"
 import { storeToRefs } from "pinia"
-import { aesDecrypt, aesEncrypt } from "@utils/aes"
+
 const { t } = useI18n()
 const { isMobile } = storeToRefs(usewebSiteStore())
 //双向绑定
@@ -276,14 +265,5 @@ const rules: FormRules = {
             message: t("Form.required"),
         },
     ],
-}
-
-const showPasswordClick = show => {
-    if (show && aesDecrypt(data.value.password)) {
-        data.value.password = aesDecrypt(data.value.password)
-    }
-    if (!show) {
-        data.value.password = aesEncrypt(data.value.password)
-    }
 }
 </script>

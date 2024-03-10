@@ -2,7 +2,7 @@
  * @Author: Cary
  * @Date: 2022-12-26 23:51:56
  * @LastEditors: Cary
- * @LastEditTime: 2024-03-10 01:23:51
+ * @LastEditTime: 2024-03-10 07:22:10
  * @FilePath: /src/pages/home/index.vue
  * @Descripttion: 
 -->
@@ -15,10 +15,7 @@
             <div
                 class="card flex flex-col justify-center w-full h-full max-w-sm"
             >
-                <div
-                    class="hero w-full h-3/4"
-                    style="background-image: url(/src/assets/homeImage/home.jpg)"
-                >
+                <div class="home hero w-full h-3/4">
                     <div class="hero-overlay bg-opacity-70"></div>
                     <div class="hero-content text-center text-neutral-content">
                         <div class="max-w-md">
@@ -51,28 +48,12 @@
                         动态路由(支持内嵌、外链)、按钮权限控制、JWT无感刷新、LDAP登录、MFA登录、黑白名单校验。额外功能国际化、多主题、水印、邮件通知等等。
                     </p>
                     <div
-                        class="flex flex-col space-y-4 justify-center items-center m:flex-row m:space-x-4"
+                        class="flex flex-col justify-center items-center m:flex-row m:space-x-4"
                     >
-                        <n-image
-                            width="200"
-                            height="140"
-                            src="/src/assets/homeImage/mfa.png"
-                        />
-                        <n-image
-                            width="200"
-                            height="140"
-                            src="/src/assets/homeImage/email.png"
-                        />
-                        <n-image
-                            width="200"
-                            height="140"
-                            src="/src/assets/homeImage/mobile.png"
-                        />
-                        <n-image
-                            width="200"
-                            height="140"
-                            src="/src/assets/homeImage/error.png"
-                        />
+                        <n-image width="200" height="140" :src="mfaImage" />
+                        <n-image width="200" height="140" :src="emailImage" />
+                        <n-image width="200" height="140" :src="mobileImage" />
+                        <n-image width="200" height="140" :src="errorImage" />
                     </div>
                 </div>
             </div>
@@ -82,15 +63,18 @@
 
 <script lang="ts" setup>
 import { NImage } from "naive-ui"
+import mfaImage from "/src/assets/homeImage/mfa.png"
+import emailImage from "/src/assets/homeImage/email.png"
+import mobileImage from "/src/assets/homeImage/mobile.png"
+import errorImage from "/src/assets/homeImage/error.png"
+
 defineOptions({
     name: "Home",
 })
 </script>
 
 <style scoped>
-.carousel-img {
-    width: 100%;
-    height: 240px;
-    object-fit: cover;
+.home {
+    background-image: url("../../assets/homeImage/home.jpg");
 }
 </style>

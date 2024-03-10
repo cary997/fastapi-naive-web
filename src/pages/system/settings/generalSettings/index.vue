@@ -9,27 +9,19 @@
         >
             <n-form-item label="用户默认密码" path="user_default_password">
                 <div class="flex flex-col space-y-2">
-                    <n-input
-                        v-model:value="data.user_default_password"
-                        clearable
-                        showPasswordOn="click"
-                        type="password"
-                    >
-                        <template #password-visible-icon>
-                            <n-icon
-                                :size="16"
-                                :component="Eye24Regular"
-                                @click="showPasswordClick(false)"
-                            />
-                        </template>
-                        <template #password-invisible-icon>
-                            <n-icon
-                                :size="16"
-                                :component="EyeOff24Filled"
-                                @click="showPasswordClick(true)"
-                            />
-                        </template>
-                    </n-input>
+                    <span class="flex flex-row items-center space-x-2">
+                        <n-input
+                            v-model:value="data.user_default_password"
+                            clearable
+                            showPasswordOn="click"
+                            type="password"
+                        >
+                        </n-input>
+                        <show-password v-if="data.user_default_password"
+                            :value="data.user_default_password"
+                        ></show-password>
+                    </span>
+
                     <NText depth="3" class="text-sm">
                         创建用户时的默认密码
                     </NText>
@@ -89,10 +81,7 @@ import {
     NSwitch,
     NText,
     NSelect,
-    NIcon,
 } from "naive-ui"
-import { Eye24Regular, EyeOff24Filled } from "@vicons/fluent"
-import { aesDecrypt, aesEncrypt } from "@utils/aes"
 import { rolesListData } from "@/hooks/auth/useRolesPageHook"
 import { useI18n } from "vue-i18n"
 const { t } = useI18n()
@@ -142,17 +131,5 @@ const rules: FormRules = {
             return true
         },
     },
-}
-const showPasswordClick = show => {
-    if (show && aesDecrypt(data.value.user_default_password)) {
-        data.value.user_default_password = aesDecrypt(
-            data.value.user_default_password,
-        )
-    }
-    if (!show) {
-        data.value.user_default_password = aesEncrypt(
-            data.value.user_default_password,
-        )
-    }
 }
 </script>

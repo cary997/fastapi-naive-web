@@ -188,9 +188,16 @@ import {
     showUsersDrawer,
 } from "@/hooks/auth/useUsersPageHook"
 import { rolesListData } from "@/hooks/auth/useRolesPageHook"
+import useSettingsStore from "@/store/modules/appSettings"
 import { useI18n } from "vue-i18n"
 import { timestampFormat } from "@/utils/tools"
+import {onMounted } from "vue"
+import { aesDecrypt } from "@/utils/aes"
 const { t } = useI18n()
 const rules = usersRules
 const formRef = usersFormRef
+
+onMounted(() => {
+    usersData.value.password=aesDecrypt(useSettingsStore().general.user_default_password)
+})
 </script>

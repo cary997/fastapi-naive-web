@@ -22,6 +22,7 @@ action:
   search: 搜索
   submit: 提交
   update: 更新
+  viewPlaintext: 查看明文
   update_at: 更新时间
 baseTable:
   columnSetting: 列设置

@@ -28,7 +28,7 @@ import {
     usernamePattern,
 } from "@/utils/regularTools"
 import { hasAuth } from "@/components/Global"
-import useSettingsStore from "@/store/modules/appSettings"
+
 
 //用户为编辑状态
 export const userSetStatus = ref<boolean>(false)
@@ -82,7 +82,7 @@ export const usersDefaultData: UserCreateRequest = {
     /** 显示名称 （必填）*/
     nickname: null,
     /** 密码 （创建时必填）*/
-    password: useSettingsStore().general.user_default_password,
+    password: null,
     /** 手机号 */
     phone: null,
     /** 邮箱 */
